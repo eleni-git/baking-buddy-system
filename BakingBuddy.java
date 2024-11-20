@@ -8,14 +8,13 @@ public class BakingBuddy
 {
     public static void main(String[] args) 
     {
-        Scanner userInput = new Scanner(System.in);
+        start();
 
-        System.out.println("Hello and welcome to your digital baking assistant: Baking Buddy. Before we start, lets collect some data about you.");
-        System.out.println("What is your first name? ");
-        String firstname = userInput.nextLine();
-        System.out.println("How many years have you been baking?");
-        Integer yearsBaking= userInput.nextInt();
-        userInput.nextLine();
+    }
+
+    public static void start()
+    {
+        User.GatherInformation();
 
         System.out.println("Ok, all information has been gathered. ");
 
