@@ -63,6 +63,24 @@ public class Menus{
         System.out.println("Option 1: Display all the contents of your digital pantry");
         System.out.println("Option 2: Search the contents of your digital pantry");
         System.out.println("Option 3: Remove contents from your digital pantry");
+        Integer menuOption = userInput.nextInt();
+            //System.out.println("Congratulations " + firstname + " you have selected option " + menuOption + ".");
+            
+        switch(menuOption)
+        {
+            case 1:
+                System.out.println("Hello");
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                System.out.println("Please ensure you enter a number between 1 and 3");
+                break;
+        }
     }
 
     public void ConversionsMenu()
