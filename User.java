@@ -2,26 +2,58 @@ import java.util.Scanner;
 
 public class User 
 {
-    public static Scanner userInput = new Scanner(System.in);
-    public static String firstname;
-    public static int yearsBaking;
+    public Scanner userInput = new Scanner(System.in);
+    public String firstname;
+    public int yearsBaking;
 
-    public static String getFirstname()
+    public String GetFirstname()
     {
         return firstname;
     }
-    public static int yearsBaking()
+    public int GetYearsBaking()
     {
         return yearsBaking;
     }
+    public void SetFirstname(String firstname) 
+    { 
+        this.firstname = firstname; 
+    }
+    public void SetYearsBaking(int yearsBaking) 
+    { 
+        this.yearsBaking = yearsBaking; 
+    }
+
     
 
-    public static void GatherInformation()
+    public void GatherInformation()
     {
         System.out.println("Hello and welcome to your digital baking assistant: Baking Buddy. Before we start, lets collect some data about you.");
         System.out.println("What is your first name? ");
-        String firstname = userInput.nextLine();
+        SetFirstname(userInput.nextLine());
         System.out.println("How many years have you been baking?");
-        // Integer yearsBaking= userInput.nextInt();
+        SetYearsBaking(userInput.nextInt());
+
+        //add error handling/ try parse
+
+        System.out.println("Ok, all information has been gathered. ");
+        PersonalisedWelcome();
+    }
+
+    public void PersonalisedWelcome()
+    {
+        if(GetYearsBaking()==0)
+        {
+            System.out.println(GetYearsBaking() + " is okay, you'll have fun learning as a total beginner " + GetFirstname() + "!");
+        }
+        else if(yearsBaking <= 3)
+        {
+            System.out.println("Wow " + GetFirstname() +  "!" + GetYearsBaking() + " years experience under your belt already!");
+        }
+        else
+        {
+            System.out.println("You must be a pro " + GetFirstname() + "! Lets hope this system can help manage the more complex bakes you must be doing having baked for " + GetYearsBaking() + " years.");
+        }
+        
+        Menus.mainMenu(GetFirstname(), GetYearsBaking());
     }
 }
