@@ -23,7 +23,7 @@ public class User
         this.yearsBaking = yearsBaking; 
     }
 
-    
+
 
     public void GatherInformation()
     {
@@ -54,6 +54,7 @@ public class User
             System.out.println("You must be a pro " + GetFirstname() + "! Lets hope this system can help manage the more complex bakes you must be doing having baked for " + GetYearsBaking() + " years.");
         }
         
-        Menus.mainMenu(GetFirstname(), GetYearsBaking());
+        Menus menus = new Menus();
+        menus.mainMenu(GetFirstname(), GetYearsBaking());
     }
 }

@@ -8,26 +8,31 @@ public class Menus{
         do
         {
             System.out.println("MAIN MENU:");
-            System.out.println("Please select your option by typing 1 to 4");
+            System.out.println("Please select your option by typing 1 to 3");
             System.out.println("Option 1: Randomly select something to bake based on your years of experience");
             System.out.println("Option 2: 'Digital Pantry' menu");
             System.out.println("Option 3: Conversions menu");
             
             Integer menuOption = userInput.nextInt();
-            System.out.println("Congratulations " + firstname + " you have selected option " + menuOption + ".");
+            //System.out.println("Congratulations " + firstname + " you have selected option " + menuOption + ".");
             
             switch(menuOption)
             {
                 case 1:
                     System.out.println("Hello");
-                    Reccommendations reccommendations = new(Reccommendations)
-                    Reccommendations.bakingReccommendations(firstname, yearsBaking);
+                    Reccommendations reccommendations = new Reccommendations();
+                    reccommendations.bakingReccommendations(firstname, yearsBaking);
                     break;
                 case 2:
-                    //method4(firstname);
+                    DigitalPantryMenu();
                     break;
-            }
-            
+                case 3:
+                    ConversionsMenu();
+                    break;
+                default:
+                    System.out.println("Please ensure you enter a number between 1 and 3");
+                    break;
+                }
             cont = ContinueOrNot();
         } while(cont == true);
     }
@@ -49,5 +54,22 @@ public class Menus{
             //System.out.println("You want to continue yay!!");
             return cont;
         }
+    }
+
+    public void DigitalPantryMenu()
+    {
+        System.out.println("WELCOME TO THE DIGITAL PANTRY:");
+        System.out.println("Please select your option by typing 1 to 3");
+        System.out.println("Option 1: Display all the contents of your digital pantry");
+        System.out.println("Option 2: Search the contents of your digital pantry");
+        System.out.println("Option 3: Remove contents from your digital pantry");
+    }
+
+    public void ConversionsMenu()
+    {
+        System.out.println("Please select your option by typing 1 to 2");
+        System.out.println("Option 1: Temperatures");
+        System.out.println("Option 2: Weights");
+        System.out.println("Option 3: ");
     }
 }
