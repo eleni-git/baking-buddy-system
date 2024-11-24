@@ -59,10 +59,11 @@ public class Menus{
     public void DigitalPantryMenu()
     {
         System.out.println("WELCOME TO THE DIGITAL PANTRY:");
-        System.out.println("Please select your option by typing 1 to 3");
+        System.out.println("Please select your option by typing 1 to 4");
         System.out.println("Option 1: Display all the contents of your digital pantry");
         System.out.println("Option 2: Search the contents of your digital pantry");
-        System.out.println("Option 3: Remove contents from your digital pantry");
+        System.out.println("Option 3: Add contents to your digital pantry");
+        System.out.println("Option 4: Remove contents from your digital pantry");
         Integer menuOption = userInput.nextInt();
             //System.out.println("Congratulations " + firstname + " you have selected option " + menuOption + ".");
             
@@ -85,9 +86,30 @@ public class Menus{
 
     public void ConversionsMenu()
     {
-        System.out.println("Please select your option by typing 1 to 2");
+        System.out.println("Please select your option by typing 1 to 3");
         System.out.println("Option 1: Temperatures");
         System.out.println("Option 2: Weights");
-        System.out.println("Option 3: ");
+        System.out.println("Option 3: Volume");
+
+
+    }
+
+    public void TemperaturesMenu()
+    {
+        System.out.println("Temperatures:");
+        System.out.println("Please select your option by typing 1 to 3");
+        System.out.println("Option 1: Celcius to Farenheit");
+        System.out.println("Option 2: Farenheit to Celcius");
+        
+        
+    }
+
+    public void WeightsMenu()
+    {
+
+    }
+    public void VolumesMenu()
+    {
+
     }
 }
