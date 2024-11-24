@@ -4,6 +4,7 @@ public class User
 {
     public Scanner userInput = new Scanner(System.in);
     public String firstname;
+    public String trialInput;
     public int yearsBaking;
 
     public String GetFirstname()
@@ -23,6 +24,15 @@ public class User
         this.yearsBaking = yearsBaking; 
     }
 
+    public String GetTrialInput()
+    {
+        return trialInput;
+    }
+    public void SetTrialInput(String trialInput)
+    {
+        this.trialInput = trialInput;
+    }
+
 
 
     public void GatherInformation()
@@ -31,9 +41,20 @@ public class User
         System.out.println("What is your first name? ");
         SetFirstname(userInput.nextLine());
         System.out.println("How many years have you been baking?");
-        SetYearsBaking(userInput.nextInt());
-
-        //add error handling/ try parse
+        //SetTrialInput(userInput.nextLine());
+        
+        do{
+            SetTrialInput(userInput.nextLine());
+            if (ErrorHandling.checkIfInteger(GetTrialInput()))
+            {
+                SetYearsBaking(Integer.parseInt(GetTrialInput()));
+            }
+            else
+            {
+                System.out.println(GetTrialInput() + " is not a valid entry. Please enter a number:");
+            }
+            
+        }while(ErrorHandling.checkIfInteger(GetTrialInput()) == false);
 
         System.out.println("Ok, all information has been gathered. ");
         PersonalisedWelcome();
