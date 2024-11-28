@@ -29,7 +29,8 @@ public class ErrorHandling
 		}  
 		catch (NumberFormatException e)  
 		{ 
-            return false;
+            System.out.println("Error, please enter a valid decimal number");
+			return false;
 		} 
 	}
 

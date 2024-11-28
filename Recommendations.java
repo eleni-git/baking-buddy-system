@@ -1,6 +1,6 @@
-public class Reccommendations 
+public class Recommendations 
 {
-    public void bakingReccommendations(String firstname, int yearsBaking) //check spelling of reccommendations
+    public void bakingRecommendations(String firstname, int yearsBaking) //check spelling of reccommendations
     {
         int randomIndex = (int)(Math.random() *2);
         String[] beginnerBakes = {"cookies", "brownies", "cupcakes", "rocky road"};
