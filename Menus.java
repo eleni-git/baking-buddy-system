@@ -2,6 +2,34 @@ import java.util.Scanner;
 
 public class Menus{
     public Scanner userInput = new Scanner(System.in);
+    ErrorHandling errorHandling = new ErrorHandling();
+    Conversions conversions = new Conversions();
+    public String trialMenuOption;
+    public int menuOption;
+    
+
+    //getters and setters
+    public int GetMenuOption()
+    {
+        return menuOption;
+    }
+
+    public void SetMenuOption(int menuOption)
+    {
+        this.menuOption = menuOption;
+    }
+
+    public String GetTrialMenuOption()
+    {
+        return trialMenuOption;
+    }
+
+    public void SetTrialMenuOption(String trialMenuOption)
+    {
+        this.trialMenuOption = trialMenuOption;
+    }
+
+
     public void mainMenu(String firstname, int yearsBaking)
     {
         boolean cont;
@@ -12,11 +40,10 @@ public class Menus{
             System.out.println("Option 1: Randomly select something to bake based on your years of experience");
             System.out.println("Option 2: 'Digital Pantry' menu");
             System.out.println("Option 3: Conversions menu");
-            
-            Integer menuOption = userInput.nextInt();
-            //System.out.println("Congratulations " + firstname + " you have selected option " + menuOption + ".");
-            
-            switch(menuOption)
+ 
+            SetMenuOption(errorHandling.TrialMenuOption());
+
+            switch(GetMenuOption())
             {
                 case 1:
                     System.out.println("Hello");
@@ -64,10 +91,9 @@ public class Menus{
         System.out.println("Option 2: Search the contents of your digital pantry");
         System.out.println("Option 3: Add contents to your digital pantry");
         System.out.println("Option 4: Remove contents from your digital pantry");
-        Integer menuOption = userInput.nextInt();
-            //System.out.println("Congratulations " + firstname + " you have selected option " + menuOption + ".");
+        SetMenuOption(errorHandling.TrialMenuOption());
             
-        switch(menuOption)
+        switch(GetMenuOption())
         {
             case 1:
                 System.out.println("Hello");
@@ -79,37 +105,82 @@ public class Menus{
                 
                 break;
             default:
-                System.out.println("Please ensure you enter a number between 1 and 3");
+                System.out.println("Please ensure you enter a number between 1 and 4");
                 break;
         }
     }
 
     public void ConversionsMenu()
     {
+        System.out.println("CONVERSIONS MENU");
         System.out.println("Please select your option by typing 1 to 3");
         System.out.println("Option 1: Temperatures");
         System.out.println("Option 2: Weights");
-        System.out.println("Option 3: Volume");
-
+        SetMenuOption(errorHandling.TrialMenuOption());
+        switch(GetMenuOption())
+        {
+            case 1:
+                TemperaturesMenu();
+                break;
+            case 2:
+                WeightsMenu();
+                break;
+            default:
+                System.out.println("Please ensure you enter a number between 1 and 2");
+                break;
+        }
 
     }
 
     public void TemperaturesMenu()
     {
         System.out.println("Temperatures:");
-        System.out.println("Please select your option by typing 1 to 3");
+        System.out.println("Please select your option by typing 1 to 2");
         System.out.println("Option 1: Celcius to Farenheit");
         System.out.println("Option 2: Farenheit to Celcius");
         
-        
+        SetMenuOption(errorHandling.TrialMenuOption());
+            
+        switch(GetMenuOption())
+        {
+            case 1:
+                conversions.CelciusConversion();
+                break;
+            case 2:
+                conversions.FarenheitConversion();
+                break;
+            default:
+                System.out.println("Please ensure you enter a number between 1 and 2");
+                TemperaturesMenu();
+        }
     }
 
     public void WeightsMenu()
     {
-
-    }
-    public void VolumesMenu()
-    {
-
+        System.out.println("Weights:");
+        System.out.println("Please select your option by typing 1 to 2");
+        System.out.println("Option 1: Kilograms (kg) to Grams (g)");
+        System.out.println("Option 2: Grams(g) to Kilograms(kg)");
+        System.out.println("Option 3: Grams(g) to Ounces(oz)");
+        System.out.println("Option 4: Ounces(oz) to Grams(g)");
+        
+        SetMenuOption(errorHandling.TrialMenuOption());
+            
+        switch(GetMenuOption())
+        {
+            case 1:
+                //conversions.;
+                break;
+            case 2:
+               // conversions.;
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                System.out.println("Please ensure you enter a number between 1 and 4");
+                WeightsMenu();
+        }
     }
 }

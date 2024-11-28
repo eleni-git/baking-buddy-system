@@ -33,8 +33,6 @@ public class User
         this.trialInput = trialInput;
     }
 
-
-
     public void GatherInformation()
     {
         System.out.println("Hello and welcome to your digital baking assistant: Baking Buddy. Before we start, lets collect some data about you.");

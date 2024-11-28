@@ -1,5 +1,6 @@
-//Try catch for how many years baking
-
+//Error handling on temperature conversions
+//Error handling on all menu selections
+//Digital pantry
 
 public class BakingBuddy
 {
