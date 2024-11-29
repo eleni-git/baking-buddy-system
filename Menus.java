@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menus{
@@ -7,17 +8,16 @@ public class Menus{
     public String trialMenuOption;
     public int menuOption;
     
-
     //getters and setters
     public int GetMenuOption()
     {
         return menuOption;
     }
-
     public void SetMenuOption(int menuOption)
     {
         this.menuOption = menuOption;
     }
+    
 //get trim working?
     public String GetTrialMenuOption()
     {
@@ -161,6 +161,8 @@ public class Menus{
 
     public void DigitalPantryMenu()
     {
+        Pantry pantry = new Pantry();
+    
         System.out.println("WELCOME TO THE DIGITAL PANTRY:");
         System.out.println("Please select your option by typing 1 to 4");
         System.out.println("Option 1: Display all the contents of your digital pantry");
@@ -172,10 +174,10 @@ public class Menus{
         switch(GetMenuOption())
         {
             case 1:
-                System.out.println("Hello");
+                pantry.DisplayIngredients(pantry.GetList());
                 break;
             case 2:
-                
+                pantry.SearchIngredients();
                 break;
             case 3:
                 

@@ -1,6 +1,8 @@
-//Error handling on temperature conversions
-//Error handling on all menu selections
 //Digital pantry
+    //method to search for 
+    //extends keyword for fresh ingredients?
+
+
 //look at mark scheme
 //comment on code
 //list extra featurs

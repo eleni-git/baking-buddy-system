@@ -1,44 +1,52 @@
-
-
-public class Ingredients
+public abstract class Ingredients
 {
     public String name;
-    public String trialUnits;
     public double quantity;
+    public double costPerUnit;
 
-    public enum Units
+    //constructor
+    public Ingredients(String name, double quantity, double costPerUnit)
     {
-        Kilograms,
-        Litres,
-        Boxed12;
+        this.name = name;
+        this.quantity = quantity;
+        this.costPerUnit = costPerUnit;
     }
 
     //getters and setters
 
-    public String getName()
+    public String GetName()
     {
         return name;
     }
-    public double getQuantity()
+    public double GetQuantity()
     {
         return quantity;
     }
-    // public int getType()
-    // {
-    //     return Type;
-    // }
-    
-    public Ingredients(String name, String trialUnits, double quantity)
+    public double GetCostPerUnit()
     {
-        this.name = name;
-        this.trialUnits = trialUnits;
-        this.quantity = quantity;
+        return costPerUnit;
     }
 
-    //pre-populate database?
-    //method to display all ingrideitns
-    //method to search for 
-    //extends keyword for fresh ingredients?
+    public void SetName(String name)
+    {
+        this.name = name;
+    }
+    public void SetQuantity(double quantity)
+    {
+        this.quantity = quantity;
+    }
+    public void SetCostPerUnit(double costPerUnit)
+    {
+        this.costPerUnit = costPerUnit;
+    }
+
+    //methods
+    public abstract String ToString(); //overrides normal ToString method
+       
+    //public abstract SearchIngredients();
+    //public abstract AddIngredients();
+    //public abstract UseIngredients();
     
+
 
 }
