@@ -1,4 +1,7 @@
-public class BoxedIngredients extends Ingredients
+
+
+
+public class BoxedIngredients extends Ingredients 
 {
     public int itemsPerBox;
     
@@ -11,17 +14,32 @@ public class BoxedIngredients extends Ingredients
     {
         this.itemsPerBox = itemsPerBox;
     }
-
+    public double GetMaximumCapacity()
+    {
+        return -1;
+    }
 
     //constructor
-    public BoxedIngredients(String name, double quantity, double costPerUnit, int itemsPerBox)
+    public BoxedIngredients()
+    {   
+    }
+    public BoxedIngredients(String name, double quantity, double costPerUnit, int Id,int itemsPerBox)
     {
-        super(name, quantity, costPerUnit);
+        super(name, quantity, costPerUnit, Id);
         this.itemsPerBox = itemsPerBox;
     }
 
+
+
     public String ToString()
     {
-        return("Boxed item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per box: £" + GetCostPerUnit() +  "\nItems per box: " + GetItemsPerBox() + "\n");
+        return("ID: " + GetId() +"\nBoxed item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per box: £" + GetCostPerUnit() +  "\nItems per box: " + GetItemsPerBox() + "\n");
+    }
+
+    public void AddIngredients()
+    {
+        super.AddIngredients();
+        System.out.println("Enter the items per box: ");
+        SetItemsPerBox(userInput.nextInt());
     }
 }

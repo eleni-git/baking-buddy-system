@@ -1,11 +1,8 @@
-//Digital pantry
-    //method to search for 
-    //extends keyword for fresh ingredients?
-
-
+//look at OOP
 //look at mark scheme
 //comment on code
-//list extra featurs
+//testing
+//list extra features
 
 public class BakingBuddy
 {
@@ -15,3 +12,16 @@ public class BakingBuddy
         user.GatherInformation();
     } 
 }
+
+// public double CheckIfDoubleIngredients()
+// 	{
+// 		try{
+//             return userInput.nextDouble();	
+//         }
+//         catch(Exception e)
+//         {
+//             System.out.println("Error, please ensure you enter a number");
+// 			//menus.mainMenu();
+// 			return 0;
+//         }
+// 	}

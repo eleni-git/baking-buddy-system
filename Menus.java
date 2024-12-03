@@ -1,10 +1,10 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menus{
     public Scanner userInput = new Scanner(System.in);
-    ErrorHandling errorHandling = new ErrorHandling();
+    //ErrorHandling errorHandling = new ErrorHandling();
     Conversions conversions = new Conversions();
+    User user = new User();
     public String trialMenuOption;
     public int menuOption;
     
@@ -29,8 +29,7 @@ public class Menus{
         this.trialMenuOption = trialMenuOption.trim();
     }
 
-
-    public void mainMenu(String firstname, int yearsBaking)
+    public void mainMenu()
     {
         boolean cont;
         do
@@ -48,7 +47,7 @@ public class Menus{
                 case 1:
                     System.out.println("Hello");
                     Recommendations recommendations = new Recommendations();
-                    recommendations.bakingRecommendations(firstname, yearsBaking);
+                    recommendations.bakingRecommendations(user.GetFirstname(), user.GetYearsBaking());
                     break;
                 case 2:
                     ConversionsMenu();
@@ -167,8 +166,8 @@ public class Menus{
         System.out.println("Please select your option by typing 1 to 4");
         System.out.println("Option 1: Display all the contents of your digital pantry");
         System.out.println("Option 2: Search the contents of your digital pantry");
-        System.out.println("Option 3: Add contents to your digital pantry");
-        System.out.println("Option 4: Remove contents from your digital pantry");
+        System.out.println("Option 3: Update the ingredients in your pantry");
+        System.out.println("Option 4: Add a new ingredient to your digital pantry");
         SetMenuOption(errorHandling.TrialMenuOption());
             
         switch(GetMenuOption())
@@ -177,10 +176,14 @@ public class Menus{
                 pantry.DisplayIngredients(pantry.GetList());
                 break;
             case 2:
+                System.out.println("Please enter the item you would like to search for: ");
                 pantry.SearchIngredients();
                 break;
             case 3:
-                
+                pantry.UpdateIngredients();
+                break;
+            case 4:
+                pantry.AddIngredients();
                 break;
             default:
                 System.out.println("Please ensure you enter a number between 1 and 4");

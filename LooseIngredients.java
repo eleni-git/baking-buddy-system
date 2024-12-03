@@ -1,10 +1,10 @@
+
+
 public class LooseIngredients extends Ingredients
 {
     public double maximumCapacity;
     public String unit;
-    
-    //constructor
-
+    ErrorHandling errorHandling = new ErrorHandling();
 
     //getters and setters
     public double GetMaximumCapacity()
@@ -15,7 +15,7 @@ public class LooseIngredients extends Ingredients
     {
         return unit;
     }
-    public void SetMaxCapacity(double maximumCapacity)
+    public void SetMaximumCapacity(double maximumCapacity)
     {
         this.maximumCapacity = maximumCapacity;
     }
@@ -23,18 +23,28 @@ public class LooseIngredients extends Ingredients
     {
         this.unit = unit;
     }
-
-
     
-    public LooseIngredients(String name, double quantity, double costPerUnit, double maximumCapacity, String unit)
+    public LooseIngredients()
+    {  
+    }
+    public LooseIngredients(String name, double quantity, double costPerUnit,int Id, double maximumCapacity, String unit)
     {
-        super(name, quantity, costPerUnit);
+        super(name, quantity, costPerUnit, Id);
         this.maximumCapacity = maximumCapacity;
         this.unit = unit;
     }
 
     public String ToString()
     {
-        return("Loose item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per " + GetUnit() + ": £" + GetCostPerUnit() +  "\nMaximum capacity: " + GetMaximumCapacity() + GetUnit() + "\n");
+        return("ID: " + GetId() +  "\nLoose item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per " + GetUnit() + ": £" + GetCostPerUnit() +  "\nMaximum storage capacity: " + GetMaximumCapacity() + GetUnit() + "\n");
+    }
+    
+    public void AddIngredients()
+    {
+        super.AddIngredients();
+        System.out.println("Enter the unit type (e.g. kg, l): ");
+        SetUnit(userInput.nextLine());
+        System.out.println("Enter the maximum storage capacity: ");
+        SetMaximumCapacity(errorHandling.CheckIfDoubleIngredients());
     }
 }

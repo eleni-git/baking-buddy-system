@@ -39,7 +39,6 @@ public class User
         System.out.println("What is your first name? ");
         SetFirstname(userInput.nextLine());
         System.out.println("How many years have you been baking?");
-        //SetTrialInput(userInput.nextLine());
         
         do{
             SetTrialInput(userInput.nextLine());
@@ -66,7 +65,7 @@ public class User
         }
         else if(yearsBaking <= 3)
         {
-            System.out.println("Wow " + GetFirstname() +  "!" + GetYearsBaking() + " years experience under your belt already!");
+            System.out.println("Wow " + GetFirstname() +  "! " + GetYearsBaking() + " years experience under your belt already!");
         }
         else
         {
@@ -74,6 +73,6 @@ public class User
         }
         
         Menus menus = new Menus();
-        menus.mainMenu(GetFirstname(), GetYearsBaking());
+        // menus.mainMenu();
     }
 }
