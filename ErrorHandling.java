@@ -52,6 +52,20 @@ public class ErrorHandling
 		return menus.menuOption;
 	}
 	
+	public double CheckIfDoubleIngredients()
+	{
+		try{
+            return userInput.nextDouble();	
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error, please ensure you enter a number");
+			//menus.mainMenu();
+			return 0;
+        }
+	}
+	
+	
 	//For doubles?
 } 
 

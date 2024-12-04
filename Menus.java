@@ -183,7 +183,7 @@ public class Menus{
                 pantry.UpdateIngredients();
                 break;
             case 4:
-                //pantry.AddIngredients();
+                pantry.AddIngredients();
             default:
                 System.out.println("Please ensure you enter a number between 1 and 4");
                 break;

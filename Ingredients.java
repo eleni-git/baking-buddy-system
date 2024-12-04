@@ -3,6 +3,7 @@ import java.util.Scanner;
 public abstract class Ingredients
 {
     public Scanner userInput = new Scanner(System.in);
+    public ErrorHandling errorHandling = new ErrorHandling();
     public String name;
     public double quantity;
     public double costPerUnit;
@@ -56,6 +57,16 @@ public abstract class Ingredients
     //methods
     public abstract String ToString(); //overrides normal ToString method
     public abstract double GetMaximumCapacity();
+
+    public void AddIngredients()
+    {
+        System.out.println("Enter the name of the item you would like to add: ");
+        SetName(userInput.nextLine());
+        System.out.println("Enter the quantity you would like to add: ");
+        SetQuantity(errorHandling.CheckIfDoubleIngredients());
+        System.out.println("Enter the cost per unit: ");
+        SetCostPerUnit(errorHandling.CheckIfDoubleIngredients());       
+    }
 
 
 }

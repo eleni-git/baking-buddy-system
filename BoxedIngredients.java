@@ -28,4 +28,11 @@ public class BoxedIngredients extends Ingredients
     {
         return("Id: " + GetId() + "\nBoxed item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per box: £" + GetCostPerUnit() +  "\nItems per box: " + GetItemsPerBox() + "\n");
     }
+    
+    public void AddIngredients()
+    {
+        super.AddIngredients();
+        System.out.println("Enter the items per box: ");
+        SetItemsPerBox(userInput.nextInt());
+    }
 }

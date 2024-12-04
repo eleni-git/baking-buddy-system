@@ -164,14 +164,31 @@ public class Pantry
         } 
     }
 
-
-
-
-    
     public void AddIngredients()
     {
-        //have validation to check ingredient is not there
-        //have validation to check max capacity not exceeded
+        System.out.println("Enter the type of item you would like to add (Boxed or Loose): ");
+        String boxedOrLoose = userInput.nextLine().toLowerCase().trim();
+        Ingredients x;
+        switch(boxedOrLoose)
+        {
+            case("boxed"):
+                x = new BoxedIngredients();
+                x.AddIngredients();
+                x.SetId(list.size()+1);
+                list.add(x);
+                System.out.println("Ingredient successfully saved");
+                break;
+            case("loose"):
+                x = new LooseIngredients();
+                x.AddIngredients();
+                list.add(x);
+                x.SetId(list.size()+1);
+                System.out.println("Ingredient successfully saved");
+                break;
+            default:
+                System.out.println("Error, please enter either Boxed or loose");
+                //main menu 
+        }
     }
 
     

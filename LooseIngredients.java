@@ -36,4 +36,13 @@ public class LooseIngredients extends Ingredients
         return("ID: " + GetId() + "\nLoose item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per " + GetUnit() + ": £" + GetCostPerUnit() +  "\nMaximum capacity: " + GetMaximumCapacity() + GetUnit() + "\n");
     }
 
+    public void AddIngredients()
+    {
+        super.AddIngredients();
+        System.out.println("Enter the unit type (e.g. kg, l): ");
+        SetUnit(userInput.nextLine());
+        System.out.println("Enter the maximum storage capacity: ");
+        SetMaximumCapacity(errorHandling.CheckIfDoubleIngredients());
+    }
+
 }
