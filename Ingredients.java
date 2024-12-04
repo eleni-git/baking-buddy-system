@@ -1,15 +1,21 @@
+import java.util.Scanner;
+
 public abstract class Ingredients
 {
+    public Scanner userInput = new Scanner(System.in);
     public String name;
     public double quantity;
     public double costPerUnit;
+    public int Id;
 
     //constructor
-    public Ingredients(String name, double quantity, double costPerUnit)
+    public Ingredients(){}
+    public Ingredients(String name, double quantity, double costPerUnit, int Id)
     {
         this.name = name;
         this.quantity = quantity;
         this.costPerUnit = costPerUnit;
+        this.Id = Id;
     }
 
     //getters and setters
@@ -26,7 +32,10 @@ public abstract class Ingredients
     {
         return costPerUnit;
     }
-
+    public int GetId()
+    {
+        return Id;
+    }
     public void SetName(String name)
     {
         this.name = name;
@@ -39,14 +48,14 @@ public abstract class Ingredients
     {
         this.costPerUnit = costPerUnit;
     }
+    public void SetId(int Id)
+    {
+        this.Id = Id;
+    }
 
     //methods
     public abstract String ToString(); //overrides normal ToString method
-       
-    //public abstract SearchIngredients();
-    //public abstract AddIngredients();
-    //public abstract UseIngredients();
-    
+    public abstract double GetMaximumCapacity();
 
 
 }

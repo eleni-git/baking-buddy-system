@@ -66,7 +66,7 @@ public class User
         }
         else if(yearsBaking <= 3)
         {
-            System.out.println("Wow " + GetFirstname() +  "!" + GetYearsBaking() + " years experience under your belt already!");
+            System.out.println("Wow " + GetFirstname() +  "! " + GetYearsBaking() + " years experience under your belt already!");
         }
         else
         {

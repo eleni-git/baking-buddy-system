@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Pantry 
 {
     public Scanner userInput = new Scanner(System.in);
-    public ArrayList<Ingredients> list = CreateList();
+    public static ArrayList<Ingredients> list = CreateList();
     public ArrayList<Ingredients> searchList;
     public String searchTerm;
 
@@ -44,21 +44,21 @@ public class Pantry
 
 
 
-    public ArrayList<Ingredients> CreateList()
+    public static ArrayList<Ingredients> CreateList()
     {
         ArrayList<Ingredients> ingredientsList = new ArrayList<>();
-        ingredientsList.add(new LooseIngredients("Plain flour", 35, 3.00, 25.00, "kg"));
-        ingredientsList.add(new LooseIngredients("Self-raising flour", 40, 3.50, 25.00, "kg"));
-        ingredientsList.add(new LooseIngredients("Golden caster sugar", 27, 2.00, 25.00, "kg"));
-        ingredientsList.add(new LooseIngredients("Light brown sugar", 40, 4.00, 25.00, "kg")); 
-        ingredientsList.add(new LooseIngredients("Sweetened condensed milk",10, 1.99, 25, "L"));
-        ingredientsList.add(new LooseIngredients("Evaporated milk",10, 1.99, 12, "L"));
-        ingredientsList.add(new LooseIngredients("Chocolate chips", 2, 7.50, 25.00, "kg"));
+        ingredientsList.add(new LooseIngredients("Plain flour", 35, 3.00,1, 100.00, "kg"));
+        ingredientsList.add(new LooseIngredients("Self-raising flour", 40, 3.50,2,  100.00, "kg"));
+        ingredientsList.add(new LooseIngredients("Golden caster sugar", 27, 2.00,3,  75.00, "kg"));
+        ingredientsList.add(new LooseIngredients("Light brown sugar", 40, 4.00,4,  75.00, "kg")); 
+        ingredientsList.add(new LooseIngredients("Sweetened condensed milk",10, 1.99,5,  25, "L"));
+        ingredientsList.add(new LooseIngredients("Evaporated milk",10, 1.99,6,  12, "L"));
+        ingredientsList.add(new LooseIngredients("Chocolate chips", 2, 7.50,7,  25.00, "kg"));
 
-        ingredientsList.add(new BoxedIngredients("Eggs",10, 1.99, 12));
-        ingredientsList.add(new BoxedIngredients("Digestive biscuits",10, 1.99, 15));
-        ingredientsList.add(new BoxedIngredients("Salted butter",15, 2.99, 12));
-        ingredientsList.add(new BoxedIngredients("Unsalted butter",20, 2.99, 12));
+        ingredientsList.add(new BoxedIngredients("Eggs",10, 1.99,8,  12));
+        ingredientsList.add(new BoxedIngredients("Digestive biscuits",10, 1.99,9, 15));
+        ingredientsList.add(new BoxedIngredients("Salted butter",15, 2.99,10, 12));
+        ingredientsList.add(new BoxedIngredients("Unsalted butter",20, 2.99,11, 12));
         
         return ingredientsList;
     }
@@ -74,18 +74,23 @@ public class Pantry
 
     public void SearchIngredients()
     {
-        System.out.println("Please enter the item you would like to search for: ");
         SetSearchTerm(userInput.nextLine().trim());
+        boolean searchValueFound = false;
         for(int i = 0; i < list.size(); i++) 
         {
-            if(list.get(i).GetName().contains(GetSearchTerm()) || list.get(i).GetName().contains(GetSearchTerm().toLowerCase()))
+            if(list.get(i).GetName().toLowerCase().contains(GetSearchTerm()) || list.get(i).GetName().toLowerCase().contains(GetSearchTerm().toLowerCase()))
             {
-                //SetSearchList(GetSearchList().add(list.get(i)));
-                // true;
+                searchValueFound = true;
+                System.out.println("Match found: ");
+                System.out.println(list.get(i).ToString() + "\n");
             }  
+            
         }
-        //print temp list or no matches found
-        
+        if(!searchValueFound)
+            {
+                System.out.println("No matches found, this item does not exist in the pantry.");
+                
+            }   
     }
 
     public void AddIngredients()

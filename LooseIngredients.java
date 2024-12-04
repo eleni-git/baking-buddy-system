@@ -4,7 +4,13 @@ public class LooseIngredients extends Ingredients
     public String unit;
     
     //constructor
-
+    public LooseIngredients(){}
+    public LooseIngredients(String name, double quantity, double costPerUnit, int Id, double maximumCapacity, String unit)
+    {
+        super(name, quantity, costPerUnit, Id);
+        this.maximumCapacity = maximumCapacity;
+        this.unit = unit;
+    }
 
     //getters and setters
     public double GetMaximumCapacity()
@@ -15,7 +21,7 @@ public class LooseIngredients extends Ingredients
     {
         return unit;
     }
-    public void SetMaxCapacity(double maximumCapacity)
+    public void SetMaximumCapacity(double maximumCapacity)
     {
         this.maximumCapacity = maximumCapacity;
     }
@@ -25,16 +31,9 @@ public class LooseIngredients extends Ingredients
     }
 
 
-    
-    public LooseIngredients(String name, double quantity, double costPerUnit, double maximumCapacity, String unit)
-    {
-        super(name, quantity, costPerUnit);
-        this.maximumCapacity = maximumCapacity;
-        this.unit = unit;
-    }
-
     public String ToString()
     {
-        return("Loose item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per " + GetUnit() + ": £" + GetCostPerUnit() +  "\nMaximum capacity: " + GetMaximumCapacity() + GetUnit() + "\n");
+        return("ID: " + GetId() + "\nLoose item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per " + GetUnit() + ": £" + GetCostPerUnit() +  "\nMaximum capacity: " + GetMaximumCapacity() + GetUnit() + "\n");
     }
+
 }
