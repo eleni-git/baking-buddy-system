@@ -180,7 +180,7 @@ public class Menus{
                 pantry.SearchIngredients();
                 break;
             case 3:
-                //pantry.UpdateIngredients();
+                pantry.UpdateIngredients();
                 break;
             case 4:
                 //pantry.AddIngredients();

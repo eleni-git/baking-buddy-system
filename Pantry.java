@@ -9,10 +9,13 @@ import java.util.Scanner;
 
 public class Pantry 
 {
+    Menus menus = new Menus();
+    User user = new User();
     public Scanner userInput = new Scanner(System.in);
     public static ArrayList<Ingredients> list = CreateList();
     public ArrayList<Ingredients> searchList;
     public String searchTerm;
+    public double updateValue;
 
     
     //getters and setters
@@ -28,6 +31,10 @@ public class Pantry
     {
         return searchTerm;
     }
+    public double GetUpdateValue()
+    {
+        return updateValue;
+    }
     public void SetList(ArrayList<Ingredients> list)
     {
         this.list = list;
@@ -40,9 +47,10 @@ public class Pantry
     {
         this.searchTerm = searchTerm;
     }
-
-
-
+    public void SetUpdateValue(double updateValue)
+    {
+        this.updateValue = updateValue;
+    }
 
     public static ArrayList<Ingredients> CreateList()
     {
@@ -67,7 +75,6 @@ public class Pantry
     {
         for(int i = 0; i < list.size(); i++) 
         {
-            System.out.println("Item: " + i);
             System.out.println(list.get(i).ToString());
         }
     }
@@ -93,16 +100,80 @@ public class Pantry
             }   
     }
 
+    public void UpdateIngredients()
+    {
+        System.out.println("Please enter the item ID you would like to update: ");
+        SetSearchTerm(userInput.nextLine().trim());
+        System.out.println("Please enter the amount of ingredient added or used (-ve): ");
+        try 
+        {
+            SetUpdateValue(userInput.nextDouble());
+        } catch (Exception e)  //- fail fast to reduce cyclomatic complexity
+        {
+            System.out.println("Please ensure you enter a number quantity");
+            menus.mainMenu(user.GetFirstname(), user.GetYearsBaking());
+        }
+
+        boolean itemExists = false;
+
+        for(int i = 1; i < list.size()+1; i++)
+        {
+            try
+            {
+                if(Integer.parseInt(GetSearchTerm()) == i)
+                {
+                    MaximumCapacityExceeded(i);
+                    MinimumThresholdBreached(i);
+                    list.get(i).SetQuantity((list.get(i).GetQuantity()) + GetUpdateValue());
+                    System.out.println("The new value in storage for " + list.get(i).GetName() + " is " + list.get(i).GetQuantity() + " kg");
+                    itemExists = true;
+                }
+            } catch(Exception ex)
+            {
+                System.out.println("Error, please ensure you enter a number ID");
+                menus.mainMenu(user.GetFirstname(), user.GetYearsBaking());
+            }
+        }
+        if(!itemExists) //positive condiitonal
+        {
+            System.out.println("Error, no item has that ID");
+        }
+    }
+    
+    public void MaximumCapacityExceeded(int i)
+    {
+        if(list.get(i).GetMaximumCapacity() != -1)
+        {
+            if((list.get(i).GetQuantity() + GetUpdateValue()) > list.get(i).GetMaximumCapacity())
+            {
+                System.out.println("Error, the amount you are trying to add exceeds the maximum capacity of " + list.get(i).GetMaximumCapacity() + "kg");
+                menus.mainMenu(user.GetFirstname(), user.GetYearsBaking());
+            }
+        }
+    }
+
+    public void MinimumThresholdBreached(int i)
+    {
+        if(list.get(i).GetMaximumCapacity() != -1)
+        {
+            if((list.get(i).GetQuantity() + GetUpdateValue()) < 0)
+            {
+                System.out.println("Error, you have attempted to use more of the ingredient than the " + list.get(i).GetQuantity() + "kg currently in storage");
+                menus.mainMenu(user.GetFirstname(), user.GetYearsBaking());
+            } 
+        } 
+    }
+
+
+
+
+    
     public void AddIngredients()
     {
         //have validation to check ingredient is not there
         //have validation to check max capacity not exceeded
     }
 
-    public void UseIngredients()
-    {
-        //search for ingredient
-        //deduct amount - have validation to check its not going -ve
-    }
+    
 
 }
