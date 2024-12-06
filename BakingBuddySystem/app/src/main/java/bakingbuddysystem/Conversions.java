@@ -1,3 +1,4 @@
+package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
 import java.util.Scanner;
 
 public class Conversions {
@@ -98,6 +99,7 @@ public class Conversions {
         this.ounces = ounces;
     }
 
+    //Takes user input, calls error handling to ensure incorrect input does not cause an uncaught exception
     public void CelciusToFarenheit()
     {
         System.out.println("Enter degrees in celcius");

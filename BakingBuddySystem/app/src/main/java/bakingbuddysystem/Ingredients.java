@@ -1,3 +1,4 @@
+package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
 import java.util.Scanner;
 
 public abstract class Ingredients
