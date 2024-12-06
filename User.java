@@ -40,21 +40,7 @@ public class User
         System.out.println("What is your first name? ");
         SetFirstname(userInput.nextLine());
         System.out.println("How many years have you been baking?");
-        //SetTrialInput(userInput.nextLine());
         SetYearsBaking(errorHandling.TrialYearsBaking());
-        // do{
-        //     SetTrialInput(userInput.nextLine());
-        //     if (ErrorHandling.checkIfInteger(GetTrialInput()))
-        //     {
-        //         SetYearsBaking(Integer.parseInt(GetTrialInput()));
-        //     }
-        //     else
-        //     {
-        //         System.out.println(GetTrialInput() + " is not a valid entry. Please enter a number:");
-        //     }
-            
-        // }while(ErrorHandling.checkIfInteger(GetTrialInput()) == false);
-
         System.out.println("Ok, all information has been gathered. ");
         PersonalisedWelcome();
     }

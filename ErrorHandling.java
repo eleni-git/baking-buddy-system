@@ -6,7 +6,6 @@ public class ErrorHandling
 	
 	public static boolean checkIfInteger(String trialInput) 
 	{          
-		
 		try 
 		{ 
 			Integer.parseInt(trialInput); 
@@ -16,10 +15,8 @@ public class ErrorHandling
 		{ 
             return false;
 		} 
-		
 	} 
 
-	//fix this as well
 	public static boolean checkIfDouble(String trialDouble)
 	{
 		try 
@@ -80,12 +77,8 @@ public class ErrorHandling
         catch(Exception e)
         {
             System.out.println("Error, please ensure you enter a number");
-			//menus.mainMenu();
 			return 0;
         }
 	}
-	
-	
-	//For doubles?
 } 
 
