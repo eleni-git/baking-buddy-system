@@ -13,7 +13,6 @@ public class Conversions {
     public double grams;
     public double ounces;
 
-
    //getters
     public String GetDegreesF()
     {
@@ -57,7 +56,6 @@ public class Conversions {
         return ounces;
     }
 
-
     //setters
     public void SetDegreesF(String degreesFString)
     {
@@ -75,8 +73,6 @@ public class Conversions {
     {
         this.celcius = celcius;
     }
-
-
     public void SetKG(String kilogramsString)
     {
         this.kilogramsString = kilogramsString;
@@ -182,13 +178,11 @@ public class Conversions {
         double farenheit = (celcius*9/5) + 32;
         return farenheit;
     }
-
     public double FarenheitToCelciusCalculation(double farenheit)
     {
         double celcius = (farenheit-32) * 5/9;
         return celcius;
     }
-
     public double KilogramsToGramsCalculation(double kilograms)
     {
         return kilograms*1000;

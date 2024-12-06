@@ -4,9 +4,11 @@ public class User
 {
     public Scanner userInput = new Scanner(System.in);
     public String firstname;
-    public String trialInput;
+    //Takes input as a string which is converted to int or caught in ErrorHandling.java
+    public String trialInput; 
     public int yearsBaking;
 
+    //getters and setters
     public String GetFirstname()
     {
         return firstname;
@@ -32,6 +34,7 @@ public class User
         this.trialInput = trialInput;
     }
 
+    //This method welcomes the user and takes their detials to give the rest of the program a more personalised feel
     public void GatherInformation()
     {
         ErrorHandling errorHandling = new ErrorHandling();
@@ -44,6 +47,7 @@ public class User
         PersonalisedWelcome();
     }
 
+    //This gives the first user specific message, and then calls the main menu
     public void PersonalisedWelcome()
     {
         if(GetYearsBaking()==0)

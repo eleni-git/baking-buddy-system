@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//The menu system allows the user to navigate to all of the features in the program
 public class Menus{
     public Scanner userInput = new Scanner(System.in);
     ErrorHandling errorHandling = new ErrorHandling();
@@ -25,7 +26,7 @@ public class Menus{
         this.trialMenuOption = trialMenuOption.trim();
     }
 
-
+    //This method is where the user will be directed back to after compeleting a method or if certain errors fail. 
     public void mainMenu(String firstname, int yearsBaking)
     {
         boolean cont;
@@ -36,13 +37,12 @@ public class Menus{
             System.out.println("Option 1: Randomly select something to bake based on your years of experience");
             System.out.println("Option 2: Conversions menu");
             System.out.println("Option 3: 'Digital Pantry' menu");
- 
+            //This is seen in all menus, ensuring an exception isn't thrown and the user gets useful output to help them navigate the menus
             SetMenuOption(errorHandling.TrialMenuOption());
 
             switch(GetMenuOption())
             {
                 case 1:
-                    System.out.println("Hello");
                     Recommendations recommendations = new Recommendations();
                     recommendations.bakingRecommendations(firstname, yearsBaking);
                     break;
@@ -59,14 +59,16 @@ public class Menus{
             cont = ContinueOrNot();
         } while(cont == true);
     }
-
+    
+    //Allows the program to loop until the user wants to exit. This is called in the main menu as it where the user is always redirected to when a method
+    //has successfully completed
     public boolean ContinueOrNot()
     {
         boolean cont = true;
-        Scanner userInput = new Scanner(System.in);
         System.out.println("Do you want to continue? yes or no");  
         String yesOrNo = userInput.nextLine();
         
+        //This condition tries to account for user error when typing, e.g. NO/No/nO/no/N/n
         if(yesOrNo.toLowerCase().contentEquals("no") || yesOrNo.toLowerCase().contentEquals("n"))
         {
             System.out.println("Goodbye! The programme will now exit");
@@ -77,7 +79,8 @@ public class Menus{
             return cont;
         }
     }
-
+   
+    //This allows the user to select what type of conversion they would like to perform
     public void ConversionsMenu()
     {
         System.out.println("CONVERSIONS MENU");
@@ -100,7 +103,8 @@ public class Menus{
         }
 
     }
-
+    
+    //This allows the user to select which temperature conversion they would like to perform, calling the appropriate method
     public void TemperaturesMenu()
     {
         System.out.println("Temperatures:");
@@ -123,6 +127,7 @@ public class Menus{
         }
     }
 
+    //This allows the user to select which weights conversion they would like to perform, calling the appropriate method
     public void WeightsMenu()
     {
         System.out.println("Weights:");
@@ -152,7 +157,8 @@ public class Menus{
                 WeightsMenu();
         }
     }
-
+    
+    //This is the menu for all of the features associated with the 'digital pantry'. It calls the appropriate methods based on the user's selection.
     public void DigitalPantryMenu()
     {
         Pantry pantry = new Pantry();

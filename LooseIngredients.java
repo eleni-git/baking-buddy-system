@@ -13,6 +13,7 @@ public class LooseIngredients extends Ingredients
     }
 
     //getters and setters
+    @Override
     public double GetMaximumCapacity()
     {
         return maximumCapacity;
@@ -30,12 +31,13 @@ public class LooseIngredients extends Ingredients
         this.unit = unit;
     }
 
-
+    @Override
     public String ToString()
     {
         return("ID: " + GetId() + "\nLoose item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per " + GetUnit() + ": £" + GetCostPerUnit() +  "\nMaximum capacity: " + GetMaximumCapacity() + GetUnit() + "\n");
     }
 
+    @Override
     public void AddIngredients()
     {
         super.AddIngredients();

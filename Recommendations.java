@@ -1,19 +1,17 @@
 public class Recommendations 
 {
-    public void bakingRecommendations(String firstname, int yearsBaking) //check spelling of reccommendations
+    public void bakingRecommendations(String firstname, int yearsBaking)
     {
         int randomIndex = (int)(Math.random() *2);
         String[] beginnerBakes = {"cookies", "brownies", "cupcakes", "rocky road"};
         String[] intermediateBakes = {"chocolate fudge cake", "sticky toffee pudding", "victoria sponge cake", "no bake cheesecake"};
         String[] AdvancedBakes = {"prinzregententorte", "prinsesstårta (princess cake)", "Yule log", "Vertical cake"};
         String[] ExpertBakes = {"Croquembouche", "mille feuille", "mini cannoli", "creme brulee"};
-        //boolean furtherOptions = false;
-        
+
         if(yearsBaking==0)
         {
             System.out.println("Well, " + firstname + ", you've been baking for " + yearsBaking + " years, Baking Buddy reccommends something simple.");
             System.out.println("Baking Buddy has randomly selected " + beginnerBakes[randomIndex] + " based on your expertise level.");
-            //System.out.println("Would you like further suggestions?");
         }
         else if(yearsBaking <= 3)
         {
