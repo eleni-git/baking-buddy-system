@@ -1,4 +1,4 @@
-package bakingbuddysystem;
+package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
 public class BoxedIngredients extends Ingredients
 {
     public int itemsPerBox;

@@ -1,4 +1,4 @@
-package bakingbuddysystem;
+package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
 import java.util.Scanner;
 
 //The menu system allows the user to navigate to all of the features in the program
