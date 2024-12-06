@@ -15,6 +15,10 @@ public class User
     {
         return yearsBaking;
     }
+    public String GetTrialInput()
+    {
+        return trialInput;
+    }
     public void SetFirstname(String firstname) 
     { 
         this.firstname = firstname; 
@@ -22,11 +26,6 @@ public class User
     public void SetYearsBaking(int yearsBaking) 
     { 
         this.yearsBaking = yearsBaking; 
-    }
-
-    public String GetTrialInput()
-    {
-        return trialInput;
     }
     public void SetTrialInput(String trialInput)
     {
@@ -59,7 +58,7 @@ public class User
         {
             System.out.println("You must be a pro " + GetFirstname() + "! Lets hope this system can help manage the more complex bakes you must be doing having baked for " + GetYearsBaking() + " years.");
         }
-        
+
         Menus menus = new Menus();
         menus.mainMenu(GetFirstname(), GetYearsBaking());
     }

@@ -1,12 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// System.out.println("Option 1: Display all the contents of your digital pantry");
-//     System.out.println("Option 2: Search the contents of your digital pantry");
-//     System.out.println("Option 3: Add contents to your digital pantry");
-//     System.out.println("Option 4: Remove contents from your digital pantry");
-
-
 public class Pantry 
 {
     Menus menus = new Menus();
@@ -23,10 +17,6 @@ public class Pantry
     {
         return list;
     }
-    public ArrayList<Ingredients> GetSearchList()
-    {
-        return searchList;
-    }
     public String GetSearchTerm()
     {
         return searchTerm;
@@ -34,14 +24,6 @@ public class Pantry
     public double GetUpdateValue()
     {
         return updateValue;
-    }
-    public void SetList(ArrayList<Ingredients> list)
-    {
-        this.list = list;
-    }
-    public void SetSearchList(ArrayList<Ingredients> searchList)
-    {
-        this.searchList = searchList;
     }
     public void SetSearchTerm(String searchTerm)
     {
@@ -171,6 +153,7 @@ public class Pantry
         Ingredients x;
         switch(boxedOrLoose)
         {
+            case("b"):
             case("boxed"):
                 x = new BoxedIngredients();
                 x.AddIngredients();
@@ -178,6 +161,7 @@ public class Pantry
                 list.add(x);
                 System.out.println("Ingredient successfully saved");
                 break;
+            case("l"):
             case("loose"):
                 x = new LooseIngredients();
                 x.AddIngredients();
@@ -186,7 +170,7 @@ public class Pantry
                 System.out.println("Ingredient successfully saved");
                 break;
             default:
-                System.out.println("Error, please enter either Boxed or loose");
+                System.out.println("Error, please enter either boxed or loose");
                 menus.mainMenu(user.GetFirstname(), user.GetYearsBaking());
         }
     }

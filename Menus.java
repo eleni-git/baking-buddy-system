@@ -12,17 +12,14 @@ public class Menus{
     {
         return menuOption;
     }
-    public void SetMenuOption(int menuOption)
-    {
-        this.menuOption = menuOption;
-    }
-    
-//get trim working?
     public String GetTrialMenuOption()
     {
         return trialMenuOption.trim();
     }
-
+    public void SetMenuOption(int menuOption)
+    {
+        this.menuOption = menuOption;
+    }
     public void SetTrialMenuOption(String trialMenuOption)
     {
         this.trialMenuOption = trialMenuOption.trim();
@@ -70,14 +67,13 @@ public class Menus{
         System.out.println("Do you want to continue? yes or no");  
         String yesOrNo = userInput.nextLine();
         
-        if(yesOrNo.toLowerCase().contentEquals("no"))
+        if(yesOrNo.toLowerCase().contentEquals("no") || yesOrNo.toLowerCase().contentEquals("n"))
         {
             System.out.println("Goodbye! The programme will now exit");
             return cont = false;
         }
         else
         {
-            //System.out.println("You want to continue yay!!");
             return cont;
         }
     }
@@ -89,6 +85,7 @@ public class Menus{
         System.out.println("Option 1: Temperatures");
         System.out.println("Option 2: Weights");
         SetMenuOption(errorHandling.TrialMenuOption());
+        
         switch(GetMenuOption())
         {
             case 1:
@@ -110,7 +107,6 @@ public class Menus{
         System.out.println("Please select your option by typing 1 to 2");
         System.out.println("Option 1: Celcius to Farenheit");
         System.out.println("Option 2: Farenheit to Celcius");
-        
         SetMenuOption(errorHandling.TrialMenuOption());
             
         switch(GetMenuOption())
@@ -135,7 +131,6 @@ public class Menus{
         System.out.println("Option 2: Grams(g) to Kilograms(kg)");
         System.out.println("Option 3: Grams(g) to Ounces(oz)");
         System.out.println("Option 4: Ounces(oz) to Grams(g)");
-        
         SetMenuOption(errorHandling.TrialMenuOption());
             
         switch(GetMenuOption())
@@ -184,6 +179,7 @@ public class Menus{
                 break;
             case 4:
                 pantry.AddIngredients();
+                break;
             default:
                 System.out.println("Please ensure you enter a number between 1 and 4");
                 break;
