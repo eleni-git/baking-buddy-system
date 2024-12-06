@@ -1,5 +1,3 @@
-//Digital pantry
-//add
 
 //OOP
 //testing

@@ -187,7 +187,7 @@ public class Pantry
                 break;
             default:
                 System.out.println("Error, please enter either Boxed or loose");
-                //main menu 
+                menus.mainMenu(user.GetFirstname(), user.GetYearsBaking());
         }
     }
 }

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class ErrorHandling 
 {
 	public Scanner userInput = new Scanner(System.in);
+	
 	public static boolean checkIfInteger(String trialInput) 
 	{          
 		
@@ -17,7 +18,6 @@ public class ErrorHandling
 		} 
 		
 	} 
-
 
 	//fix this as well
 	public static boolean checkIfDouble(String trialDouble)
@@ -34,6 +34,26 @@ public class ErrorHandling
 		} 
 	}
 
+	public int TrialYearsBaking()
+	{
+		User user = new User();
+		do{
+            user.SetTrialInput(userInput.nextLine());
+            if (checkIfInteger(user.GetTrialInput()))
+            {
+                user.SetYearsBaking(Integer.parseInt(user.GetTrialInput()));
+				System.out.println(user.GetYearsBaking());
+				return user.GetYearsBaking();
+            }
+            else
+            {
+                System.out.println(user.GetTrialInput() + " is not a valid entry. Please enter a number:");
+            }
+            
+        }while(checkIfInteger(user.GetTrialInput()) == false);
+		return -1;
+	}
+	
 	public int TrialMenuOption()
 	{
 		Menus menus = new Menus();

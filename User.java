@@ -35,24 +35,25 @@ public class User
 
     public void GatherInformation()
     {
+        ErrorHandling errorHandling = new ErrorHandling();
         System.out.println("Hello and welcome to your digital baking assistant: Baking Buddy. Before we start, lets collect some data about you.");
         System.out.println("What is your first name? ");
         SetFirstname(userInput.nextLine());
         System.out.println("How many years have you been baking?");
         //SetTrialInput(userInput.nextLine());
-        
-        do{
-            SetTrialInput(userInput.nextLine());
-            if (ErrorHandling.checkIfInteger(GetTrialInput()))
-            {
-                SetYearsBaking(Integer.parseInt(GetTrialInput()));
-            }
-            else
-            {
-                System.out.println(GetTrialInput() + " is not a valid entry. Please enter a number:");
-            }
+        SetYearsBaking(errorHandling.TrialYearsBaking());
+        // do{
+        //     SetTrialInput(userInput.nextLine());
+        //     if (ErrorHandling.checkIfInteger(GetTrialInput()))
+        //     {
+        //         SetYearsBaking(Integer.parseInt(GetTrialInput()));
+        //     }
+        //     else
+        //     {
+        //         System.out.println(GetTrialInput() + " is not a valid entry. Please enter a number:");
+        //     }
             
-        }while(ErrorHandling.checkIfInteger(GetTrialInput()) == false);
+        // }while(ErrorHandling.checkIfInteger(GetTrialInput()) == false);
 
         System.out.println("Ok, all information has been gathered. ");
         PersonalisedWelcome();
