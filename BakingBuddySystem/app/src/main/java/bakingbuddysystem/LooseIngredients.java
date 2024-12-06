@@ -1,4 +1,4 @@
-package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
+package bakingbuddysystem;
 public class LooseIngredients extends Ingredients
 {
     public double maximumCapacity;

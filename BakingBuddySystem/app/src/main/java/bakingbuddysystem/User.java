@@ -1,4 +1,4 @@
-package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
+package bakingbuddysystem;
 import java.util.Scanner;
 
 public class User 

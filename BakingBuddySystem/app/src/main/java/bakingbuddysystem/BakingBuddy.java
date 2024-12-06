@@ -1,9 +1,9 @@
-package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
+package bakingbuddysystem;
 //OOP
 //testing
 //look at mark scheme
 //comment on code
-//list extra featurs
+//list extra features
 
 public class BakingBuddy
 {

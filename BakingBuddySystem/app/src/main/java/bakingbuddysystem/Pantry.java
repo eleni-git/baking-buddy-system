@@ -1,4 +1,4 @@
-package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
+package bakingbuddysystem;
 import java.util.ArrayList;
 import java.util.Scanner;
 
