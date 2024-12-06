@@ -1,4 +1,3 @@
-package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
 public class Recommendations 
 {
     public void bakingRecommendations(String firstname, int yearsBaking)

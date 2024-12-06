@@ -1,11 +1,9 @@
-package BakingBuddySystem.app.src.main.java.bakingbuddysystem;
 public class LooseIngredients extends Ingredients
 {
     public double maximumCapacity;
     public String unit;
     
-    //constructors - The empty constructor allows an instance to be created without all the details, which is used in the AddIngredients() in the 
-    //digital pantry
+    //constructor
     public LooseIngredients(){}
     public LooseIngredients(String name, double quantity, double costPerUnit, int Id, double maximumCapacity, String unit)
     {
@@ -33,14 +31,12 @@ public class LooseIngredients extends Ingredients
         this.unit = unit;
     }
 
-    //Overrides the normal ToString() method to display and format the boxed ingredients for a better UX
     @Override
     public String ToString()
     {
         return("ID: " + GetId() + "\nLoose item: " + GetName() + "\nQuantity: " + GetQuantity() + "\nCost per " + GetUnit() + ": £" + GetCostPerUnit() +  "\nMaximum capacity: " + GetMaximumCapacity() + GetUnit() + "\n");
     }
-    
-    //Extends the shared part of ingredients to collect the loose ingredient specific properties to be able to add a new item to the digital pantry
+
     @Override
     public void AddIngredients()
     {
