@@ -72,8 +72,7 @@ public class Pantry
                 searchValueFound = true;
                 System.out.println("Match found: ");
                 System.out.println(list.get(i).ToString() + "\n");
-            }  
-            
+            }    
         }
         if(!searchValueFound)
             {
