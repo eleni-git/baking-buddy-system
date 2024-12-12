@@ -6,6 +6,7 @@ public class Pantry
     Menus menus = new Menus();
     User user = new User();
     public Scanner userInput = new Scanner(System.in);
+    //Loads list with the data (list of ingredients) provided in the CreateList method
     public static ArrayList<Ingredients> list = CreateList();
     public ArrayList<Ingredients> searchList;
     public String searchTerm;
@@ -34,9 +35,12 @@ public class Pantry
         this.updateValue = updateValue;
     }
 
+    //Creates and returns a list of both types of ingredients for the user to display/search/update/add to
     public static ArrayList<Ingredients> CreateList()
     {
+        //Creates blank list
         ArrayList<Ingredients> ingredientsList = new ArrayList<>();
+        //Instantiates each object one at a time, adding it to the list
         ingredientsList.add(new LooseIngredients("Plain flour", 35, 3.00,1, 100.00, "kg"));
         ingredientsList.add(new LooseIngredients("Self-raising flour", 40, 3.50,2,  100.00, "kg"));
         ingredientsList.add(new LooseIngredients("Golden caster sugar", 27, 2.00,3,  75.00, "kg"));
@@ -53,14 +57,18 @@ public class Pantry
         return ingredientsList;
     }
 
+    //Loops through the list passed in and displays each ingredient using the ToString() method defined in its corresponding class, pausing before
+    //it prints the next one
     public void DisplayIngredients(ArrayList<Ingredients> list)
     {
         for(int i = 0; i < list.size(); i++) 
         {
             System.out.println(list.get(i).ToString());
+            ErrorHandling.waitBeforeContinuing(1000);
         }
     }
 
+    //Checks if user input matches items stored in the list, displaying any matches, or informing the user if no matches are found.
     public void SearchIngredients()
     {
         SetSearchTerm(userInput.nextLine().trim());

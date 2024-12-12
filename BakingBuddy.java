@@ -8,9 +8,7 @@ public class BakingBuddy
 {
     public static void main(String[] args) 
     {
-        Tests tests = new Tests();
-        tests.RunTests();
-        // User user = new User();
-        // user.GatherInformation();
+        User user = new User();
+        user.GatherInformation();
     } 
 }

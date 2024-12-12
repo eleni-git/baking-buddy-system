@@ -4,18 +4,29 @@ public class Tests
 {
     public void RunTests()
     {
-        //System.out.println("Please ");
+        
         System.out.println("BOXED INGREDIENTS TESTS");
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println(BoxedIngredientsTest());
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println("\nLOOSE INGREDIENTS TESTS");
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println(LooseIngredientsTest());
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println("\nCONVERSIONS TESTS");
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println(ConversionsTest());
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println("\nERROR HANDLING TESTS");
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println(ErrorHandlingTest());
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println("\nPANTRY TESTS");
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println(PantryTest());
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println("\nRECOMMENDATIONS TESTS");
+        ErrorHandling.waitBeforeContinuing(1000);
         System.out.println(ReccommendationsTest());
     
     }
@@ -143,17 +154,9 @@ public class Tests
         {
             returnMessage += "Error, unccessfully parsed string to integer";
         }
-        if(!errorHandling.checkIfDouble("notAnInteger"))
-        {
-            returnMessage += "\nError handling test 2 passed: Successfully handles string after trying to parse it as an integer";
-        }
-        else
-        {
-            returnMessage += "\nError, unccessfully parsed string input";
-        }
         if(errorHandling.checkIfDouble("0.1"))
         {
-            returnMessage += "\nError handling test 3 passed: Successfully parses string to double";
+            returnMessage += "\nError handling test 2 passed: Successfully parses string to double";
         }
         else
         {

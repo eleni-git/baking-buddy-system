@@ -34,16 +34,18 @@ public class User
         this.trialInput = trialInput;
     }
 
-    //This method welcomes the user and takes their detials to give the rest of the program a more personalised feel
+    //This method welcomes the user and takes their details to give the rest of the program a more personalised feel.
     public void GatherInformation()
     {
         ErrorHandling errorHandling = new ErrorHandling();
-        System.out.println("Hello and welcome to your digital baking assistant: Baking Buddy. Before we start, lets collect some data about you.");
+        System.out.println("Hello and welcome to your digital baking assistant: Baking Buddy. ");
+        ErrorHandling.waitBeforeContinuing(1000);
+        System.out.println("Lets gather some information about you.");
         System.out.println("What is your first name? ");
         SetFirstname(userInput.nextLine());
         System.out.println("How many years have you been baking?");
+        //Calls a method which ensures if string entered cannot be parsed to an integer it will repeat
         SetYearsBaking(errorHandling.TrialYearsBaking());
-        System.out.println("Ok, all information has been gathered. ");
         PersonalisedWelcome();
     }
 
@@ -56,7 +58,7 @@ public class User
         }
         else if(yearsBaking <= 3)
         {
-            System.out.println("Wow " + GetFirstname() +  "! " + GetYearsBaking() + " years experience under your belt already!");
+            System.out.println("Wow " + GetFirstname() +  ", " + GetYearsBaking() + " years experience under your belt already!");
         }
         else
         {

@@ -32,11 +32,12 @@ public class Menus{
         boolean cont;
         do
         {
-            System.out.println("MAIN MENU:");
-            System.out.println("Please select your option by typing 1 to 3");
+            System.out.println("\nMAIN MENU:");
+            System.out.println("Please select your option by typing 1 to 4");
             System.out.println("Option 1: Randomly select something to bake based on your years of experience");
             System.out.println("Option 2: Conversions menu");
             System.out.println("Option 3: 'Digital Pantry' menu");
+            System.out.println("## Option 4: run tests ## - for Baking Buddy system maintenance only");
             //This is seen in all menus, ensuring an exception isn't thrown and the user gets useful output to help them navigate the menus
             SetMenuOption(errorHandling.TrialMenuOption());
 
@@ -52,8 +53,12 @@ public class Menus{
                 case 3:
                     DigitalPantryMenu();
                     break;
+                case 4:
+                    Tests tests = new Tests();
+                    tests.RunTests();
+                    break;
                 default:
-                    System.out.println("Please ensure you enter a number between 1 and 3");
+                    System.out.println("Please ensure you enter a number between 1 and 4");
                     break;
                 }
             cont = ContinueOrNot();
@@ -84,7 +89,7 @@ public class Menus{
     public void ConversionsMenu()
     {
         System.out.println("CONVERSIONS MENU");
-        System.out.println("Please select your option by typing 1 to 2");
+        System.out.println("Please select your option by typing 1 or 2");
         System.out.println("Option 1: Temperatures");
         System.out.println("Option 2: Weights");
         SetMenuOption(errorHandling.TrialMenuOption());
@@ -108,7 +113,7 @@ public class Menus{
     public void TemperaturesMenu()
     {
         System.out.println("Temperatures:");
-        System.out.println("Please select your option by typing 1 to 2");
+        System.out.println("Please select your option by typing 1 or 2");
         System.out.println("Option 1: Celcius to Farenheit");
         System.out.println("Option 2: Farenheit to Celcius");
         SetMenuOption(errorHandling.TrialMenuOption());

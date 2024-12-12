@@ -39,7 +39,6 @@ public class ErrorHandling
             if (checkIfInteger(user.GetTrialInput()))
             {
                 user.SetYearsBaking(Integer.parseInt(user.GetTrialInput()));
-				System.out.println(user.GetYearsBaking());
 				return user.GetYearsBaking();
             }
             else
@@ -79,6 +78,15 @@ public class ErrorHandling
             System.out.println("Error, please ensure you enter a number");
 			return 0;
         }
+	}
+	
+	public static void waitBeforeContinuing(int milliseconds) 
+	{
+		try {
+			Thread.sleep(milliseconds);
+		} catch (InterruptedException e) {
+			System.out.println("Error");
+		}
 	}
 } 
 
