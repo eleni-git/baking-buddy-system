@@ -4,6 +4,7 @@ public class ErrorHandling
 {
 	public Scanner userInput = new Scanner(System.in);
 	
+	//Checks if string input can be parsed to integer, either returning true or catching the exception and returning false
 	public static boolean checkIfInteger(String trialInput) 
 	{          
 		try 
@@ -17,6 +18,7 @@ public class ErrorHandling
 		} 
 	} 
 
+	//Checks if string input can be parsed as a double, either returning true or catching the exception and returning false
 	public static boolean checkIfDouble(String trialDouble)
 	{
 		try 
@@ -31,6 +33,7 @@ public class ErrorHandling
 		} 
 	}
 
+	//As other parts of the program require a value for years baking, it loops until a valid entry has been given
 	public int TrialYearsBaking()
 	{
 		User user = new User();
@@ -47,9 +50,12 @@ public class ErrorHandling
             }
             
         }while(checkIfInteger(user.GetTrialInput()) == false);
-		return -1;
+		return -1; //Required another return statement, but should never hit this
 	}
 	
+	//Takes string input but loops until it can be parsed as an integer successfully to select a menu option. 
+	//(Does not deal with whether it is in range in this method for reusability for all menus, this is instead dealt with in the default 
+	//case in the swicth case which will remind the user of which numbers will succesfully navigate somewhere)
 	public int TrialMenuOption()
 	{
 		Menus menus = new Menus();
@@ -67,7 +73,8 @@ public class ErrorHandling
 		}while(ErrorHandling.checkIfInteger(menus.GetTrialMenuOption()) == false);
 		return menus.menuOption;
 	}
-	
+
+	//Checks if input is a double and returns it, or an error message
 	public double CheckIfDoubleIngredients()
 	{
 		try{
@@ -80,6 +87,7 @@ public class ErrorHandling
         }
 	}
 	
+	//Pauses the execution of the program, slowing output in the console allowing for a better UX
 	public static void waitBeforeContinuing(int milliseconds) 
 	{
 		try {

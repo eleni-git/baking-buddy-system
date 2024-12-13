@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//Ingredients is an abstract class are there are no 'Ingredients', but the two sub types of ingredients share common features
 public abstract class Ingredients
 {
     public Scanner userInput = new Scanner(System.in);
@@ -9,7 +10,8 @@ public abstract class Ingredients
     public double costPerUnit;
     public int Id;
 
-    //constructor
+    //constructors - The empty constructor allows an instance to be created without all the details, which is used in the AddIngredients() in the 
+    //digital pantry
     public Ingredients(){}
     public Ingredients(String name, double quantity, double costPerUnit, int Id)
     {
@@ -20,7 +22,6 @@ public abstract class Ingredients
     }
 
     //getters and setters
-
     public String GetName()
     {
         return name;
@@ -56,8 +57,10 @@ public abstract class Ingredients
 
     //methods
     public abstract String ToString(); //overrides normal ToString method
-    public abstract double GetMaximumCapacity();
+    public abstract double GetMaximumCapacity(); 
 
+    //Both types of ingredients use this as a base, and extend it using 'super'
+    //This method is to add a new ingredient to the digital pantry, taking user input on the details of the ingredient they would like to add
     public void AddIngredients()
     {
         System.out.println("Enter the name of the item you would like to add: ");

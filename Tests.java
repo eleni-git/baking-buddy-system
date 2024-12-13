@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Tests
 {
+    //Runs all the tests, formatting them with headers, and pausing before running the next one
     public void RunTests()
     {
-        
         System.out.println("BOXED INGREDIENTS TESTS");
         ErrorHandling.waitBeforeContinuing(1000);
         System.out.println(BoxedIngredientsTest());
@@ -64,6 +64,7 @@ public class Tests
     public String LooseIngredientsTest()
     {
         String returnMessage = "";
+        //Tests a sample loose ingredient can be instantiated and all getter methods work.
         LooseIngredients looseIngredients = new LooseIngredients("Demerara sugar",10, 1.99,15,100, "kg");
         if(looseIngredients.GetName() =="Demerara sugar" && looseIngredients.GetQuantity()==10 && looseIngredients.GetCostPerUnit()==1.99 && looseIngredients.GetId()==15 && looseIngredients.GetMaximumCapacity()==100 && looseIngredients.GetUnit()== "kg")
         {
@@ -91,6 +92,7 @@ public class Tests
     {
         Conversions conversions = new Conversions();
         String returnMessage="";
+        //Checks celcius to farenheit calculates correctly using set values
         if(conversions.CelciusToFarenheitCalculation(37.5) == 99.5)
         {
             returnMessage += "Converstions test 1 passed: celcius to farenheit converts correctly";
@@ -99,6 +101,7 @@ public class Tests
         {
             returnMessage += "Error, celcius to farenheit conversion failed";
         }
+        //Checks farenheit to celcius calculates correctly using set values
         if(conversions.FarenheitToCelciusCalculation(99.5) == 37.5)
         {
             returnMessage += "\nConverstions test 2 passed: farenheit to celcius converts correctly";
@@ -107,6 +110,7 @@ public class Tests
         {
             returnMessage += "\nError, celcius to farenheit conversion failed";
         }
+        //Checks kilograms to grams calculates correctly using set values
         if(conversions.KilogramsToGramsCalculation(1) == 1000)
         {
             returnMessage += "\nConverstions test 3 passed: kilograms to grams converts correctly";
@@ -115,6 +119,7 @@ public class Tests
         {
             returnMessage += "\nError, kilograms to grams conversion failed";
         }
+        //Checks grams to kilograms calculates correctly using set values
         if(conversions.GramsToKilogramsCalculation(1000) == 1)
         {
             returnMessage += "\nConverstions test 4 passed: grams to kilograms converts correctly";
@@ -123,6 +128,7 @@ public class Tests
         {
             returnMessage += "\nError, grams to kilograms conversion failed";
         }
+        //Checks ounces to grams calculates correctly using set values
         if(conversions.OuncesToGramsCalculation(1) == 28.35)
         {
             returnMessage += "\nConverstions test 5 passed: ounces to grams converts correctly";
@@ -131,6 +137,7 @@ public class Tests
         {
             returnMessage += "\nError, ounces to grams conversion failed";
         }
+        //Checks grams to ounces calculates correctly using set values
         if(conversions.GramsToOuncesCalculation(28.35) == 1)
         {
             returnMessage += "\nConverstions test 6 passed: grams to ounces converts correctly";
@@ -146,6 +153,7 @@ public class Tests
     {
         ErrorHandling errorHandling = new ErrorHandling();
         String returnMessage = "";
+        //checks if string is successfully parsed to an integer
         if(errorHandling.checkIfInteger("1"))
         {
             returnMessage += "Error handling test 1 passed: Successfully parses string to integer";
@@ -154,6 +162,7 @@ public class Tests
         {
             returnMessage += "Error, unccessfully parsed string to integer";
         }
+        //checks if string is successfully parsed to a double
         if(errorHandling.checkIfDouble("0.1"))
         {
             returnMessage += "\nError handling test 2 passed: Successfully parses string to double";
@@ -188,6 +197,7 @@ public class Tests
     {
         String returnMessage = "";
         int randomIndex = (int)(Math.random() *4);
+        //checks the random integer generated is in the expected range which this method relies on works
         if(randomIndex >= 0 && randomIndex < 4)
         {
             returnMessage += "Recommendations test 1 passed: randomly generated index for array will be within the boundaries";
