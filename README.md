@@ -1,6 +1,6 @@
 Project title: Baking buddy
 
-This project was developed using github, repo: 
+This project was developed using github, repo: https://github.com/eleni-git/baking-buddy-system
 
 Navigating:
 To navigate this program, you will be prompted to enter a number at certain menus. At the end of every method (or every time an error is caught) it will ask if you want to continue. Unless you type No or N (or any equivalents with case variations)
